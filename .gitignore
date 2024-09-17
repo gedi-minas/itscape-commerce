@@ -211,3 +211,6 @@ src/Tests/Nop.Tests/Connections.resx
 src/Plugins/Nop.Plugin.Misc.Elko/*
 src/Plugins/Nop.Plugin.Misc.Elko
 !src/Plugins/Nop.Plugin.Misc.Elko
+
+Nop.Plugin.Misc.Elko
+Nop.Plugin.Misc.Elko/*

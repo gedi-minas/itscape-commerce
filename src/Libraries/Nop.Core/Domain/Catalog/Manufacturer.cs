@@ -116,4 +116,7 @@ public partial class Manufacturer : BaseEntity, ILocalizedEntity, ISlugSupported
     /// Gets or sets a value indicating whether the price range should be entered manually
     /// </summary>
     public bool ManuallyPriceRange { get; set; }
+    public int ReferenceId { get; set; }    
+    public string ReferenceCode { get; set; }
+    public string ReferenceName { get; set; }
 }

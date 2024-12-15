@@ -593,4 +593,9 @@ public partial class Product : BaseEntity, ILocalizedEntity, ISlugSupported, IAc
         get => (RentalPricePeriod)RentalPricePeriodId;
         set => RentalPricePeriodId = (int)value;
     }
+
+    public int ReferenceId { get; set; }
+    public string ReferenceCode { get; set; }
+    public string ReferenceName { get; set; }
+
 }

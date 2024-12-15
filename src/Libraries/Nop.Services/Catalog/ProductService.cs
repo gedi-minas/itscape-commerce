@@ -598,6 +598,19 @@ public partial class ProductService : IProductService
     }
 
     /// <summary>
+    /// Gets product
+    /// </summary>
+    /// <param name="productRferenceId">Product reference identifier</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the product
+    /// </returns>
+    public virtual async Task<Product> GetProductByReferenceIdAsync(int productReferenceId)
+    {
+        return await _productRepository.Table.FirstOrDefaultAsync(p=>p.ReferenceId.Equals(productReferenceId));
+    }
+
+    /// <summary>
     /// Get products by identifiers
     /// </summary>
     /// <param name="productIds">Product identifiers</param>
@@ -2841,6 +2854,11 @@ public partial class ProductService : IProductService
     public virtual async Task DeleteDiscountProductMappingAsync(DiscountProductMapping discountProductMapping)
     {
         await _discountProductMappingRepository.DeleteAsync(discountProductMapping);
+    }
+
+    public async Task<Product> GetProductByReferencCodedAsync(int productReferenceCode)
+    {
+        return await _productRepository.Table.FirstOrDefaultAsync(p => p.ReferenceCode.Equals(productReferenceCode));
     }
 
     #endregion

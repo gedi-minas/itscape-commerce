@@ -196,6 +196,32 @@ public partial class ManufacturerService : IManufacturerService
     }
 
     /// <summary>
+    /// Gets a manufacturer
+    /// </summary>
+    /// <param name="manufacturerReferenceId">Manufacturer Reference identifier</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the manufacturer
+    /// </returns>
+    public virtual async Task<Manufacturer> GetManufacturerByReferenceIdAsync(int manufacturerReferenceId)
+    {        
+        return await _manufacturerRepository.Table.FirstOrDefaultAsync(m=>m.ReferenceId.Equals(manufacturerReferenceId));
+    }
+
+    /// <summary>
+    /// Gets a manufacturer
+    /// </summary>
+    /// <param name="manufacturerCode">Manufacturer Reference Code</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the manufacturer
+    /// </returns>
+    public virtual async Task<Manufacturer> GetManufacturerByReferenceCodeAsync(string manufacturerReferenceCode)
+    {
+        return await _manufacturerRepository.Table.FirstOrDefaultAsync(m => m.ReferenceCode.Equals(manufacturerReferenceCode));
+    }
+
+    /// <summary>
     /// Get manufacturers for which a discount is applied
     /// </summary>
     /// <param name="discountId">Discount identifier; pass null to load all records</param>
@@ -552,6 +578,11 @@ public partial class ManufacturerService : IManufacturerService
     public async Task DeleteDiscountManufacturerMappingAsync(DiscountManufacturerMapping discountManufacturerMapping)
     {
         await _discountManufacturerMappingRepository.DeleteAsync(discountManufacturerMapping);
+    }
+
+    public async Task<int> DisplayOrder()
+    {
+        return await _manufacturerRepository.Table.MaxAsync(m => m.DisplayOrder);
     }
 
     #endregion

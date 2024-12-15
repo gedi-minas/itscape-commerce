@@ -84,6 +84,26 @@ public partial interface IManufacturerService
     Task<Manufacturer> GetManufacturerByIdAsync(int manufacturerId);
 
     /// <summary>
+    /// Gets a manufacturer
+    /// </summary>
+    /// <param name="manufacturerReferenceId">Manufacturer Reference identifier</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the manufacturer
+    /// </returns>
+    Task<Manufacturer> GetManufacturerByReferenceIdAsync(int manufacturerReferenceId);
+
+    /// <summary>
+    /// Gets a manufacturer
+    /// </summary>
+    /// <param name="manufacturerReferenceCode">Manufacturer Reference Code</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the manufacturer
+    /// </returns>
+    Task<Manufacturer> GetManufacturerByReferenceCodeAsync(string manufacturerReferenceCode);
+
+    /// <summary>
     /// Gets the manufacturers by category identifier
     /// </summary>
     /// <param name="categoryId">Category identifier</param>
@@ -233,4 +253,6 @@ public partial interface IManufacturerService
     /// <param name="discountManufacturerMapping">Discount-manufacturer mapping</param>
     /// <returns>A task that represents the asynchronous operation</returns>
     Task InsertDiscountManufacturerMappingAsync(DiscountManufacturerMapping discountManufacturerMapping);
+
+    Task<int> DisplayOrder();
 }

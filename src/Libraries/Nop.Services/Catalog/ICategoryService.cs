@@ -118,6 +118,36 @@ public partial interface ICategoryService
     Task<Category> GetCategoryByIdAsync(int categoryId);
 
     /// <summary>
+    /// Gets a category
+    /// </summary>
+    /// <param name="categoryReferenceId">Category reference identifier</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the category
+    /// </returns>
+    Task<Category> GetCategoryByReferenceIdAsync(int categoryId);
+
+    /// <summary>
+    /// Gets a category
+    /// </summary>
+    /// <param name="categoryReferenceCode">Category reference code</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the category
+    /// </returns>
+    Task<Category> GetCategoryByReferenceCodeAsync(string categoryReferenceCode);
+    
+    /// <summary>
+    /// Gets a category
+    /// </summary>
+    /// <param name="categoryReferenceName">Category reference name</param>
+    /// <returns>
+    /// A task that represents the asynchronous operation
+    /// The task result contains the category
+    /// </returns>
+    Task<List<Category>> GetCategoriesByReferenceNameAsync(string referenceName);
+
+    /// <summary>
     /// Get categories for which a discount is applied
     /// </summary>
     /// <param name="discountId">Discount identifier; pass null to load all records</param>

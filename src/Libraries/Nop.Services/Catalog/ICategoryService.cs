@@ -118,36 +118,6 @@ public partial interface ICategoryService
     Task<Category> GetCategoryByIdAsync(int categoryId);
 
     /// <summary>
-    /// Gets a category
-    /// </summary>
-    /// <param name="categoryReferenceId">Category reference identifier</param>
-    /// <returns>
-    /// A task that represents the asynchronous operation
-    /// The task result contains the category
-    /// </returns>
-    Task<Category> GetCategoryByReferenceIdAsync(int categoryId);
-
-    /// <summary>
-    /// Gets a category
-    /// </summary>
-    /// <param name="categoryReferenceCode">Category reference code</param>
-    /// <returns>
-    /// A task that represents the asynchronous operation
-    /// The task result contains the category
-    /// </returns>
-    Task<Category> GetCategoryByReferenceCodeAsync(string categoryReferenceCode);
-    
-    /// <summary>
-    /// Gets a category
-    /// </summary>
-    /// <param name="categoryReferenceName">Category reference name</param>
-    /// <returns>
-    /// A task that represents the asynchronous operation
-    /// The task result contains the category
-    /// </returns>
-    Task<List<Category>> GetCategoriesByReferenceNameAsync(string referenceName);
-
-    /// <summary>
     /// Get categories for which a discount is applied
     /// </summary>
     /// <param name="discountId">Discount identifier; pass null to load all records</param>
@@ -328,4 +298,12 @@ public partial interface ICategoryService
     /// The task result contains the category breadcrumb 
     /// </returns>
     Task<IList<Category>> GetCategoryBreadCrumbAsync(Category category, IList<Category> allCategories = null, bool showHidden = false);
+
+    /// <summary>
+    /// Get category object by Name 
+    /// </summary>
+    /// <param name="categoryName">CategoryName</param>
+    /// <returns>
+    /// A Catgeroy object 
+    /// </returns>
 }

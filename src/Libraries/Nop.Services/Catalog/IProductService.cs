@@ -82,27 +82,6 @@ public partial interface IProductService
     /// </returns>
     Task<Product> GetProductByIdAsync(int productId);
 
-
-    /// <summary>
-    /// Gets product
-    /// </summary>
-    /// <param name="productReferenceId">Product Reference identifier</param>
-    /// <returns>
-    /// A task that represents the asynchronous operation
-    /// The task result contains the product
-    /// </returns>
-    Task<Product> GetProductByReferenceIdAsync(int productReferenceId);
-    
-    /// <summary>
-    /// Gets product
-    /// </summary>
-    /// <param name="productReferenceCode">Product reference code</param>
-    /// <returns>
-    /// A task that represents the asynchronous operation
-    /// The task result contains the product
-    /// </returns>
-    Task<Product> GetProductByReferencCodedAsync(int productReferenceCode);
-
     /// <summary>
     /// Gets products by identifier
     /// </summary>

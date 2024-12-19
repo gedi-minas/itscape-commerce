@@ -470,18 +470,7 @@ public partial class CategoryService : ICategoryService
         return await _categoryRepository.GetByIdAsync(categoryId, cache => default);
     }
 
-    /// <summary>
-    /// Gets a category
-    /// </summary>
-    /// <param name="categoryReferenceId">Category reference identifier</param>
-    /// <returns>
-    /// A task that represents the asynchronous operation
-    /// The task result contains the category
-    /// </returns>
-    public virtual async Task<Category> GetCategoryByReferenceIdAsync(int categoryReferenceId)
-    {
-        return await _categoryRepository.Table.FirstOrDefaultAsync(c => c.ReferenceId == categoryReferenceId);
-    }
+  
 
     /// <summary>
     /// Get categories for which a discount is applied
@@ -840,16 +829,5 @@ public partial class CategoryService : ICategoryService
             return result;
         });
     }
-
-    public async Task<Category> GetCategoryByReferenceCodeAsync(string categoryrReferenceCode)
-    {
-        return await _categoryRepository.Table.FirstOrDefaultAsync(c=>c.ReferenceCode.Equals(categoryrReferenceCode));
-    }
-
-    public async Task<List<Category>> GetCategoriesByReferenceNameAsync(string referenceName)
-    {
-        return await _categoryRepository.Table.Where(c=>c.ReferenceName.Equals(referenceName)).ToListAsync();
-    }
-
     #endregion
 }

@@ -136,8 +136,4 @@ public partial class Category : BaseEntity, ILocalizedEntity, ISlugSupported, IA
     /// Gets or sets a value indicating whether the vendor cannot add products to the category
     /// </summary>
     public bool RestrictFromVendors { get; set; }
-    
-    public int ReferenceId { get; set; }    
-    public string ReferenceCode { get; set; }
-    public string ReferenceName { get; set; }
 }

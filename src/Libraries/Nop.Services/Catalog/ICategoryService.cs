@@ -300,10 +300,10 @@ public partial interface ICategoryService
     Task<IList<Category>> GetCategoryBreadCrumbAsync(Category category, IList<Category> allCategories = null, bool showHidden = false);
 
     /// <summary>
-    /// Get category object by Name 
+    /// Update category store mappings
     /// </summary>
-    /// <param name="categoryName">CategoryName</param>
-    /// <returns>
-    /// A Catgeroy object 
-    /// </returns>
+    /// <param name="category">Category</param>
+    /// <param name="limitedToStoresIds">A list of store ids for mapping</param>
+    /// <returns>A task that represents the asynchronous operation</returns>
+    Task UpdateCategoryStoreMappingsAsync(Category category, IList<int> limitedToStoresIds);
 }

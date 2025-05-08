@@ -80,7 +80,7 @@ public class OmnisendAdminController : BasePluginController
 
         await FillBatchesAsync(model);
 
-        return View(model);
+        return View("~/Plugins/Misc.Omnisend/Views/Configure.cshtml", model);
     }
 
     [HttpPost, ActionName("Configure")]
@@ -104,6 +104,7 @@ public class OmnisendAdminController : BasePluginController
         }
 
         //_omnisendSettings.UseTracking = model.UseTracking;
+        //recommended not to change this setting
         _omnisendSettings.UseTracking = true;
 
         await _settingService.SaveSettingAsync(_omnisendSettings);
